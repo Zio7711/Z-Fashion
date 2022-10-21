@@ -1,4 +1,6 @@
 import CoverVideo from "../components/CoverVideo";
+import Logo from "../components/Logo";
+import NavBar from "../components/NavBar";
 import React from "react";
 import styled from "styled-components";
 
@@ -12,8 +14,8 @@ const Home = () => {
   return (
     <Section>
       <CoverVideo />
-      <h1>Logo</h1>
-      <h1>NavBar</h1>
+      <Logo />
+      <NavBar />
     </Section>
   );
 };

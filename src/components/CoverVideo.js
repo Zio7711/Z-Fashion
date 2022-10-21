@@ -1,5 +1,6 @@
 import MainVideo from "../assets/Walking Girl.mp4";
 import React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const VideoContainer = styled.div`
@@ -26,7 +27,7 @@ const DarkOverlay = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.6)`};
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;
@@ -59,46 +60,106 @@ const Title = styled.div`
 `;
 
 const CoverVideo = () => {
+  //title variants
+  const container = {
+    hidden: { opacity: 0, pathLength: 0 },
+    show: {
+      opacity: 1,
+      pathLength: 1,
+      transition: { delayChildren: 2, staggerChildren: 0.2 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
     <VideoContainer>
       <DarkOverlay />
-      <Title>
+      <Title variants={container} initial="hidden" animate="show">
         <div>
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.18">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.18"
+          >
             Z
-          </h1>
+          </motion.h1>
 
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.16">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.16"
+          >
             -
-          </h1>
+          </motion.h1>
 
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.14">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.14"
+          >
             F
-          </h1>
+          </motion.h1>
 
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.12">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.12"
+          >
             A
-          </h1>
+          </motion.h1>
 
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.10">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.10"
+          >
             S
-          </h1>
+          </motion.h1>
 
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.08">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.08"
+          >
             H
-          </h1>
+          </motion.h1>
 
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.06">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.06"
+          >
             I
-          </h1>
+          </motion.h1>
 
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.04">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.04"
+          >
             O
-          </h1>
+          </motion.h1>
 
-          <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.02">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-speed="4"
+            data-scroll-delay="0.02"
+          >
             N
-          </h1>
+          </motion.h1>
         </div>
 
         <h2 data-scroll data-scroll-speed="2" data-scroll-delay="0.04">
