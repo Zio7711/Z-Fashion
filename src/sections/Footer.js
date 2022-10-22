@@ -8,6 +8,7 @@ const Section = styled.section`
   min-height: 100vh;
   width: 100vw;
   margin: 5rem auto;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
