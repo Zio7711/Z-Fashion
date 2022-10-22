@@ -12,6 +12,7 @@ import img6 from "../assets/Images/6.webp";
 import img7 from "../assets/Images/7.webp";
 import img8 from "../assets/Images/8.webp";
 import img9 from "../assets/Images/9.webp";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useLayoutEffect } from "react";
 
@@ -81,7 +82,7 @@ const Right = styled.div`
   }
 `;
 
-const Item = styled.div`
+const Item = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,7 +106,12 @@ const Item = styled.div`
 
 const Product = ({ img, title }) => {
   return (
-    <Item>
+    <Item
+      initial={{ filter: "grayscale(100%)" }}
+      whileInView={{ filter: "grayscale(0%)" }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false, amount: "all" }}
+    >
       <img src={img} alt={title} />
       <h1>{title}</h1>
     </Item>
@@ -133,7 +139,7 @@ const Shop = () => {
           end: pinWrapWidth,
           scrub: true,
           pin: true,
-          markers: true,
+          //   markers: true,
           scroller: ".App",
         },
 
@@ -148,7 +154,7 @@ const Shop = () => {
           start: "top top",
           end: pinWrapWidth,
           scrub: true,
-          markers: true,
+          //   markers: true,
           scroller: ".App",
         },
 
@@ -158,6 +164,11 @@ const Shop = () => {
 
       ScrollTrigger.refresh();
     }, 1000);
+
+    return () => {
+      t1.kill();
+      ScrollTrigger.kill();
+    };
   }, []);
   return (
     <Section ref={ref}>

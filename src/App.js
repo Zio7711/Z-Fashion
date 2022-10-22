@@ -6,6 +6,7 @@ import Banner from "./sections/Banner";
 import GlobalStyles from "./styles/GlobalStyles";
 import Home from "./sections/Home";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import NewArrivals from "./sections/NewArrivals";
 import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
 import Shop from "./sections/Shop";
 import { ThemeProvider } from "styled-components";
@@ -40,6 +41,7 @@ function App() {
               <About />
               <Shop />
               <Banner />
+              <NewArrivals />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>
