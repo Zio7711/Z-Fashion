@@ -156,7 +156,7 @@ const NewArrivals = () => {
     }, 1000);
   }, []);
   return (
-    <Section ref={ref}>
+    <Section ref={ref} id="new-arrivals">
       <Title
         data-scroll
         data-scroll-speed="-2"

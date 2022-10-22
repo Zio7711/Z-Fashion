@@ -81,7 +81,7 @@ const Logo = () => {
           </g>
         </svg>
         <Text variants={textVariants} initial="hidden" animate="visible">
-          Zio Studio
+          Z-Web Studio
         </Text>
       </Link>
     </Container>
