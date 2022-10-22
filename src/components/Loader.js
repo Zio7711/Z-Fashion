@@ -38,13 +38,23 @@ const Container = styled(motion.div)`
       }
     }
   }
+
+  @media (max-width: 48em) {
+    svg {
+      width: 20vw;
+    }
+  }
 `;
 
 const Text = styled(motion.span)`
   font-size: ${(props) => props.theme.fontxl};
   color: ${(props) => props.theme.text};
   padding-top: 0.5rem;
+  @media (max-width: 48em) {
+    font-size: ${(props) => props.theme.fontlg};
+  }
 `;
+
 const Loader = () => {
   const pathVariants = {
     hidden: { opacity: 0, pathLength: 0 },

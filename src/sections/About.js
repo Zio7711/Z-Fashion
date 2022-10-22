@@ -11,6 +11,14 @@ const Section = styled.section`
   /* overflow: hidden; */
   display: flex;
   margin: 0 auto;
+
+  @media (max-width: 48em) {
+    width: 90vw;
+  }
+
+  @media (max-width: 30em) {
+    width: 100vw;
+  }
 `;
 
 const Title = styled.div`
@@ -22,6 +30,16 @@ const Title = styled.div`
   top: 1rem;
   left: 5%;
   z-index: 5;
+
+  @media (max-width: 64em) {
+    font-size: ${(props) => `calc(${props.theme.fontxxxxl} - 5vw)`};
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: 48em) {
+    font-size: ${(props) => props.theme.fontxxxl};
+  }
 `;
 
 const Left = styled.div`
@@ -32,6 +50,29 @@ const Left = styled.div`
   margin-top: 20%;
 
   width: 50%;
+
+  @media (max-width: 64em) {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 auto;
+
+    padding: 2rem;
+    font-weight: 600;
+    backdrop-filter: blur(2px);
+    background-color: ${(props) => `rgba(${props.theme.textRgba},0.4)`};
+    border-radius: 20px;
+  }
+
+  @media (max-width: 48em) {
+    font-size: ${(props) => props.theme.fontmd};
+  }
+  @media (max-width: 30em) {
+    font-size: ${(props) => props.theme.fontsm};
+    width: 70%;
+  }
 `;
 
 const Right = styled.div`
@@ -55,6 +96,34 @@ const Right = styled.div`
     left: 80%;
     bottom: 30%;
     width: 40%;
+  }
+
+  @media (max-width: 64em) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      object-fit: cover;
+      height: 100vh;
+    }
+
+    .small-image-1 {
+      width: 30%;
+      height: auto;
+
+      left: 5%;
+      bottom: 10%;
+    }
+
+    .small-image-2 {
+      width: 30%;
+      height: auto;
+
+      left: 60%;
+      bottom: 20%;
+    }
   }
 `;
 

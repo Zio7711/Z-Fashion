@@ -40,6 +40,14 @@ const Title = styled.div`
   top: 1rem;
   left: 5%;
   z-index: 6;
+
+  @media (max-width: 64em) {
+    font-size: ${(props) => props.theme.fontxxl};
+  }
+
+  @media (max-width: 48em) {
+    font-size: ${(props) => props.theme.fontxl};
+  }
 `;
 
 const Left = styled.div`
@@ -61,6 +69,24 @@ const Left = styled.div`
     width: 80%;
     font-weight: 300;
     margin: 0 auto;
+  }
+
+  @media (max-width: 64em) {
+    p {
+      font-size: ${(props) => props.theme.fontmd};
+    }
+  }
+
+  @media (max-width: 48em) {
+    p {
+      font-size: ${(props) => props.theme.fontsm};
+    }
+  }
+
+  @media (max-width: 30em) {
+    p {
+      font-size: ${(props) => props.theme.fontxs};
+    }
   }
 `;
 
@@ -101,6 +127,10 @@ const Item = styled(motion.div)`
     cursor: pointer;
     display: inline-block;
     width: fit-content;
+  }
+
+  @media (max-width: 48em) {
+    width: 15rem;
   }
 `;
 
