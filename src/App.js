@@ -2,6 +2,7 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 
 import About from "./sections/About";
 import { AnimatePresence } from "framer-motion";
+import Banner from "./sections/Banner";
 import GlobalStyles from "./styles/GlobalStyles";
 import Home from "./sections/Home";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
@@ -38,6 +39,7 @@ function App() {
               <Home />
               <About />
               <Shop />
+              <Banner />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>
