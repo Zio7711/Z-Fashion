@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const NavContainer = styled(motion.div)`
   position: absolute;
@@ -57,18 +58,30 @@ const MenuItems = styled(motion.ul)`
 const MenuItem = styled(motion.li)`
   text-transform: uppercase;
   color: ${(props) => props.theme.text};
-  /* cursor: pointer; */
+  cursor: pointer;
 `;
 
 const NavBar = () => {
   const [click, setClick] = useState(false);
+
+  const { scroll } = useLocomotiveScroll();
+
+  const handleScroll = (id) => {
+    setClick(!click);
+    let elem = document.querySelector(id);
+    scroll.scrollTo(elem, {
+      offset: -100,
+      duration: 2000,
+      easing: [0.25, 0.0, 0.35, 1.0],
+    });
+  };
 
   return (
     <NavContainer
       click={click}
       initial={{ y: "-100%" }}
       animate={{ y: 0 }}
-      transition={{ duration: 2, delay: 2 }}
+      transition={{ duration: 2, delay: 5 }}
     >
       <MenuItems
         drag="y"
@@ -81,24 +94,28 @@ const NavBar = () => {
       >
         <MenuBtn onClick={() => setClick(!click)}>Menu</MenuBtn>
         <MenuItem
+          onClick={() => handleScroll("#home")}
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
         >
           Home
         </MenuItem>
         <MenuItem
+          onClick={() => handleScroll(".about")}
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
         >
           About
         </MenuItem>
         <MenuItem
+          onClick={() => handleScroll("#shop")}
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
         >
           Shop
         </MenuItem>
         <MenuItem
+          onClick={() => handleScroll("#new-arrivals")}
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
         >
